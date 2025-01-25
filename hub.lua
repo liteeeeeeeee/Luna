@@ -37,6 +37,8 @@ local Tab = Window:CreateTab({
 	ShowTitle = true -- This will determine whether the big header text in the tab will show
 })
 
+Tab:CreateSection("Section Example")
+
 
 local Tab = Window:CreateTab({
 	Name = "Tab Example",
