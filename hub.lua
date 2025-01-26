@@ -18,7 +18,7 @@ local Window = Luna:CreateWindow({
 
 local Tab = Window:CreateTab({
 	Name = "Main",
-	Icon = "home",
+	Icon = "home_filled",
 	ImageSource = "Material",
 	ShowTitle = true -- This will determine whether the big header text in the tab will show
 })
