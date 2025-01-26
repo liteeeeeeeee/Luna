@@ -16,6 +16,13 @@ local Window = Luna:CreateWindow({
 	},
 })
 
+Window:CreateHomeTab({
+	SupportedExecutors = {}, -- A Table Of Executors Your Script Supports. Add strings of the executor names for each executor.
+	DiscordInvite = "7DJRDQP5xc", -- The Discord Invite Link. Do Not Include discord.gg/ | Only Include the code.
+	Icon = 2, -- By Default, The Icon Is The Home Icon. If You would like to change it to dashboard, replace the interger with 2
+})
+
+
 local Tab = Window:CreateTab({
 	Name = "Main",
 	Icon = "home_filled",
@@ -23,32 +30,45 @@ local Tab = Window:CreateTab({
 	ShowTitle = true -- This will determine whether the big header text in the tab will show
 })
 
-local Button = Tab:CreateButton({
-	Name = "Join our Discord!",
-	Description = nil, -- Creates A Description For Users to know what the button does (looks bad if you use it all the time),
-    	Callback = function()
-			local requestData = {
-				cmd = 'INVITE_BROWSER',
-				args = { code = getgenv().lunainvite },
-				nonce = game:GetService("HttpService"):GenerateGUID(false)
-			}
-			
-			local success, response = pcall((syn and syn.request) or http and http.request or http_request or (fluxus and fluxus.request) or request, {
-				Url = 'http://127.0.0.1:6463/rpc?v=1',
-				Method = 'POST',
-				Headers = { ['Content-Type'] = 'application/json', ['Origin'] = 'https://discord.com' },
-				Body = game:GetService("HttpService"):JSONEncode(requestData)
-			})     
-			
-    	end
+local Tab = Window:CreateTab({
+	Name = "Universal",
+	Icon = "verified",
+	ImageSource = "Material",
+	ShowTitle = true -- This will determine whether the big header text in the tab will show
 })
 
-
 local Tab = Window:CreateTab({
-	Name = "Tab Example",
+	Name = "Scripts Keyless",
 	Icon = "view_in_ar",
 	ImageSource = "Material",
 	ShowTitle = true -- This will determine whether the big header text in the tab will show
 })
 
-Tab:CreateSection("Section Example")
+local Tab = Window:CreateTab({
+	Name = "Scripts Require Key",
+	Icon = "view_in_ar",
+	ImageSource = "Material",
+	ShowTitle = true -- This will determine whether the big header text in the tab will show
+})
+
+local Tab = Window:CreateTab({
+	Name = "Character",
+	Icon = "accessibility",
+	ImageSource = "Material",
+	ShowTitle = true -- This will determine whether the big header text in the tab will show
+})
+
+local Tab = Window:CreateTab({
+	Name = "Extras",
+	Icon = "settings",
+	ImageSource = "Material",
+	ShowTitle = true -- This will determine whether the big header text in the tab will show
+})
+
+local Tab = Window:CreateTab({
+	Name = "Credits",
+	Icon = "info",
+	ImageSource = "Material",
+	ShowTitle = true -- This will determine whether the big header text in the tab will show
+})
+
