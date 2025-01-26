@@ -1,4 +1,4 @@
-local Luna = loadstring(game:HttpGet("https://raw.githubusercontent.com/Nebula-Softworks/Luna-Interface-Suite/refs/heads/main/source.lua", true))()
+local Luna = loadstring(game:HttpGet("https://raw.githubusercontent.com/liteeeeeeeee/Luna/refs/heads/main/source.lua", true))()
 getgenv().lunainvite = "7DJRDQP5xc"
 
 
@@ -44,7 +44,6 @@ local Button = Tab:CreateButton({
 })
 
 
-
 local Tab = Window:CreateTab({
 	Name = "Tab Example",
 	Icon = "view_in_ar",
@@ -52,3 +51,4 @@ local Tab = Window:CreateTab({
 	ShowTitle = true -- This will determine whether the big header text in the tab will show
 })
 
+Tab:CreateSection("Section Example")
