@@ -1,11 +1,11 @@
 local Luna = loadstring(game:HttpGet("https://raw.githubusercontent.com/Nebula-Softworks/Luna-Interface-Suite/refs/heads/main/source.lua", true))()
-getgenv().lunainvite = "getluna"
+getgenv().lunainvite = "7DJRDQP5xc"
 
 
 local Window = Luna:CreateWindow({
-	Name = "Home", -- This Is Title Of Your Window
+	Name = "Luna hub beta", -- This Is Title Of Your Window
 	Subtitle = nil, -- A Gray Subtitle next To the main title.
-	LogoID = "115516242896602", -- The Asset ID of your logo. Set to nil if you do not have a logo for Luna to use.
+	LogoID = "102522856500969", -- The Asset ID of your logo. Set to nil if you do not have a logo for Luna to use.
 	LoadingEnabled = true, -- Whether to enable the loading animation. Set to false if you do not want the loading screen or have your own custom one.
 	LoadingTitle = "Luna ScriptHub", -- Header for loading screen
 	LoadingSubtitle = "by Nebula Softworks", -- Subtitle for loading screen
