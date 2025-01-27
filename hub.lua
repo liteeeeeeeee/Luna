@@ -110,6 +110,37 @@ local Button = Universal:CreateButton({
 end
 })
 
+local Button = Universal:CreateButton({
+    Name = "Dex Explorer", -- Button name
+    Description = "Best roblox game explorer.", -- Button description
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/infyiff/backup/main/dex.lua"))()
+        Luna:Notification({ 
+            Title = "Dex Explorer Executed",
+            Icon = "notifications_active",
+            ImageSource = "Material",
+            Content = "Nexus Hub Notification"
+        })
+    end
+})
+
+local Button = Universal:CreateButton({
+    Name = "Simple Spy", -- Button name
+    Description = "Requires hookfunction or won't work ", -- Button description
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/infyiff/backup/main/SimpleSpyV3/main.lua", true))()
+        
+        if hookfunction == nil then
+            Luna:Notification({ 
+                Title = "Error", 
+                Icon = "report",
+                ImageSource = "Material",
+                Content = "Your executor does not support hookfunction."
+            })
+        end
+    end    
+})
+
 local Label = Extras:CreateLabel({
 	Text = "Warning",
 	Style = 3 -- Luna Labels Have 3 Styles : A Basic Label, A Green Information Label and A Red Warning Label. Look At The Following Image For More Details
@@ -117,7 +148,7 @@ local Label = Extras:CreateLabel({
 
 local Button = Extras:CreateButton({
     Name = "Destoy Luna UI", -- Button name
-    Description = "Destroys luna UI.", -- Button description
+    Description = nil; -- Button description
     Callback = function()
         Luna:Destroy()
     end
