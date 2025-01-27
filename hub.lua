@@ -8,7 +8,7 @@ local Window = Luna:CreateWindow({
 	LogoID = "102522856500969", -- The Asset ID of your logo. Set to nil if you do not have a logo for Luna to use.
 	LoadingEnabled = true, -- Whether to enable the loading animation. Set to false if you do not want the loading screen or have your own custom one.
 	LoadingTitle = "Luna ScriptHub", -- Header for loading screen
-	LoadingSubtitle = "by Nebula Softworks", -- Subtitle for loading screen
+	LoadingSubtitle = "by silly script", -- Subtitle for loading screen
 
 	ConfigSettings = {
 		RootFolder = nil, -- The Root Folder Is Only If You Have A Hub With Multiple Game Scripts and u may remove it. DO NOT ADD A SLASH
@@ -85,14 +85,29 @@ local Button = Universal:CreateButton({
     Name = "Infinite Yeild", -- Button name
     Description = nil, -- Button description
     Callback = function()
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))() 
+        local successMessage, errorMessage = pcall(function()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))()
+        end)
+        
+        if successMessage then
+        Luna:Notification({ 
+            Title = "Script Executor Succesfully",
+            Icon = "notifications_active",
+            ImageSource = "Material",
+            Content = "Script is working."
+        })
+    else
+
+        if not successMessage then
             Luna:Notification({ 
-                Title = "Infinite Yeild Executed",
-                Icon = "notifications_active",
+                Title = "Error", 
+                Icon = "report",
                 ImageSource = "Material",
-                Content = "Nexus Hub Notification"
+                Content = "An error occurred: " .. errorMessage
             })
+        end
     end
+end
 })
 
 local Label = Extras:CreateLabel({
@@ -319,6 +334,6 @@ Credits:CreateSection("Nexus Hub Credits")
 
 local Paragraph = Credits:CreateParagraph({
 	Title = "Friends",
-	Text = "Pooke pepless - giving me ideas and helping me out with the hub :3"
+	Text = "Pooke Pepless - giving me ideas and helping me out with the hub :3"
 })
 
