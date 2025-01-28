@@ -119,7 +119,7 @@ local Button = Universal:CreateButton({
             Title = "Dex Explorer Executed",
             Icon = "notifications_active",
             ImageSource = "Material",
-            Content = "Nexus Hub Notification"
+            Content = "Luna hub Notification"
         })
     end
 })
@@ -141,54 +141,6 @@ local Button = Universal:CreateButton({
     end    
 })
 
-local Label = Extras:CreateLabel({
-	Text = "Warning",
-	Style = 3 -- Luna Labels Have 3 Styles : A Basic Label, A Green Information Label and A Red Warning Label. Look At The Following Image For More Details
-})
-
-local Button = Extras:CreateButton({
-    Name = "Destoy Luna UI", -- Button name
-    Description = nil; -- Button description
-    Callback = function()
-        Luna:Destroy()
-    end
-})
-
-local Label = Extras:CreateLabel({
-	Text = "Testing",
-	Style = 2 -- Luna Labels Have 3 Styles : A Basic Label, A Green Information Label and A Red Warning Label. Look At The Following Image For More Details
-})
-
-local Button = Extras:CreateButton({
-    Name = "UNC Test", -- Button name
-    Description = "Runs a UNC test.", -- Button description
-    Callback = function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/unified-naming-convention/NamingStandard/refs/heads/main/UNCCheckEnv.lua"))() 
-        Luna:Notification({ 
-            Title = "UNC Test Executed",
-            Icon = "notifications_active",
-            ImageSource = "Material",
-            Content = "Nexus Hub Notification"
-        })
-    end
-})
-
-local Button = Extras:CreateButton({
-    Name = "sUNC Test", -- Button name
-    Description = "Runs a sUNC test.", -- Button description
-    Callback = function()
-        loadstring(game:HttpGet("https://gitlab.com/sens3/nebunu/-/raw/main/HummingBird8's_sUNC_yes_i_moved_to_gitlab_because_my_github_acc_got_brickedd/sUNCm0m3n7.lua"))()
-        Luna:Notification({ 
-            Title = "sUNC Test Executed",
-            Icon = "notifications_active",
-            ImageSource = "Material",
-            Content = "Nexus Hub Notification"
-        })
-    end
-})
-
-
-
 Character:CreateSection("Universal")
 
 local flying = false
@@ -208,7 +160,7 @@ Luna:Notification({
 Title = "Fly Toggle Enabled",
 Icon = "notifications_active",
 ImageSource = "Material",
-Content = "Nexus Hub Notification"
+Content = "Luna Hub Notification"
 })
 else
 stopFlying()
@@ -216,7 +168,7 @@ Luna:Notification({
 Title = "Fly Toggle Disabled",
 Icon = "notifications_active",
 ImageSource = "Material",
-Content = "Nexus Hub Notification"
+Content = "Luna Hub Notification"
 })
 end
 end
@@ -301,7 +253,7 @@ Callback = function(Text)
         Title = "Fly Speed Changed",
         Icon = "notifications_active",
         ImageSource = "Material",
-        Content = "Nexus Hub Notification"
+        Content = "Luna Hub Notification"
     })
 -- The function that takes place when the input is changed
 -- The variable (Text) is a string for the value in the text box
@@ -343,11 +295,75 @@ local Button = Character:CreateButton({
             Title = "WalkSpeed/Jumpspeed Reset",
             Icon = "notifications_active",
             ImageSource = "Material",
-            Content = "Nexus Hub Notification"
+            Content = "Luna Hub Notification"
         })
     end
 })
 
+local Label = Extras:CreateLabel({
+	Text = "Game Modification",
+	Style = 1 -- Luna Labels Have 3 Styles : A Basic Label, A Green Information Label and A Red Warning Label. Look At The Following Image For More Details
+})
+
+local Button = Extras:CreateButton({
+    Name = "Anti Afk", -- Button name
+    Description = "Enables Anti Afk.", -- Button description
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/hassanxzayn-lua/Anti-afk/main/antiafkbyhassanxzyn"))();
+        Luna:Notification({ 
+            Title = "Anti Afk Executed",
+            Icon = "notifications_active",
+            ImageSource = "Material",
+            Content = "Luna Hub Notification"
+        })
+    end
+})
+
+local Label = Extras:CreateLabel({
+	Text = "Warning",
+	Style = 3 -- Luna Labels Have 3 Styles : A Basic Label, A Green Information Label and A Red Warning Label. Look At The Following Image For More Details
+})
+
+local Button = Extras:CreateButton({
+    Name = "Destoy Luna UI", -- Button name
+    Description = nil; -- Button description
+    Callback = function()
+        Luna:Destroy()
+    end
+})
+
+local Label = Extras:CreateLabel({
+	Text = "Testing",
+	Style = 2 -- Luna Labels Have 3 Styles : A Basic Label, A Green Information Label and A Red Warning Label. Look At The Following Image For More Details
+})
+
+local Button = Extras:CreateButton({
+    Name = "UNC Test", -- Button name
+    Description = "Runs a UNC test.", -- Button description
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/unified-naming-convention/NamingStandard/refs/heads/main/UNCCheckEnv.lua"))() 
+        Luna:Notification({ 
+            Title = "UNC Test Executed",
+            Icon = "notifications_active",
+            ImageSource = "Material",
+            Content = "Luna Hub Notification"
+        })
+    end
+})
+
+local Button = Extras:CreateButton({
+    Name = "sUNC Test", -- Button name
+    Description = "Runs a sUNC test.", -- Button description
+    Callback = function()
+        loadstring(game:HttpGet("https://gitlab.com/sens3/nebunu/-/raw/main/HummingBird8's_sUNC_yes_i_moved_to_gitlab_because_my_github_acc_got_brickedd/sUNCm0m3n7.lua"))()
+        Luna:Notification({ 
+            Title = "sUNC Test Executed",
+            Icon = "notifications_active",
+            ImageSource = "Material",
+            Content = "Luna Hub Notification"
+        })
+    end
+})
 
 Credits:CreateSection("Luna UI Credits")
 
