@@ -1,5 +1,4 @@
 local Luna = loadstring(game:HttpGet("https://raw.githubusercontent.com/liteeeeeeeee/Luna/refs/heads/main/source.lua", true))()
-getgenv().lunainvite = "7DJRDQP5xc"
 
 
 local Window = Luna:CreateWindow({
@@ -78,25 +77,24 @@ local Paragraph = MainTab:CreateParagraph({
 	Text = "This is an example of a paragraph. You can use this to display information about your script or hub."
 })
 
-
-MainTab:CreateSection("Universal")
+Universal:CreateSection("Popular among the community")
 
 local Button = Universal:CreateButton({
     Name = "Infinite Yeild", -- Button name
     Description = nil, -- Button description
-    Callback = function()
-        local successMessage, errorMessage = pcall(function()
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))()
-        end)
+        Callback = function()
+            local successMessage, errorMessage = pcall(function()
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))()
+            end)
         
-        if successMessage then
-        Luna:Notification({ 
-            Title = "Script Executor Succesfully",
-            Icon = "notifications_active",
-            ImageSource = "Material",
-            Content = "Script is working."
-        })
-    else
+            if successMessage then
+                Luna:Notification({ 
+                Title = "Script Executed Succesfully",
+                Icon = "notifications_active",
+                ImageSource = "Material",
+                Content = "Script is working."
+            })
+        else
 
         if not successMessage then
             Luna:Notification({ 
@@ -113,32 +111,85 @@ end
 local Button = Universal:CreateButton({
     Name = "Dex Explorer", -- Button name
     Description = "Best roblox game explorer.", -- Button description
-    Callback = function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/infyiff/backup/main/dex.lua"))()
-        Luna:Notification({ 
-            Title = "Dex Explorer Executed",
-            Icon = "notifications_active",
-            ImageSource = "Material",
-            Content = "Luna hub Notification"
-        })
+        Callback = function()
+            local successMessage, errorMessage = pcall(function()
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/infyiff/backup/main/dex.lua"))()
+            end)
+        
+            if successMessage then
+                Luna:Notification({ 
+                Title = "Script Executed Succesfully",
+                Icon = "notifications_active",
+                ImageSource = "Material",
+                Content = "Script is working."
+            })
+        else
+
+        if not successMessage then
+            Luna:Notification({ 
+                Title = "Error", 
+                Icon = "report",
+                ImageSource = "Material",
+                Content = "An error occurred: " .. errorMessage
+            })
+        end
     end
+end
 })
 
 local Button = Universal:CreateButton({
     Name = "Simple Spy", -- Button name
     Description = "Requires hookfunction or won't work ", -- Button description
-    Callback = function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/infyiff/backup/main/SimpleSpyV3/main.lua", true))()
+        Callback = function()
+            local successMessage, errorMessage = pcall(function()
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/infyiff/backup/main/SimpleSpyV3/main.lua"))()
+            end)
         
-        if hookfunction == nil then
-            Luna:Notification({ 
-                Title = "Error", 
-                Icon = "report",
+            if successMessage then
+                Luna:Notification({ 
+                Title = "Script Executed Succesfully",
+                Icon = "notifications_active",
                 ImageSource = "Material",
-                Content = "Your executor does not support hookfunction."
+                Content = "Script is working."
             })
-        end
-    end    
+        else
+
+            if not hookfunction then
+                Luna:Notification({ 
+                    Title = "Error", 
+                    Icon = "report",
+                    ImageSource = "Material",
+                    Content = "Your executor does not support hookfunction."
+                })
+            end
+    end
+end
+})
+
+Universal:CreateDivider()
+Universal:CreateSection("Others")
+
+local Button = Universal:CreateButton({
+	Name = "Universal Jerk",
+	Description = nil,
+    	Callback = function()
+            local successMessage, errorMessage = pcall(function()
+            local G = loadstring(game:HttpGet("https://raw.githubusercontent.com/Bwhw827g29wh/Scripts/refs/heads/main/FetchAndExecute.lua"))()
+
+            local player = game.Players.LocalPlayer
+            local char = player.Character or player.CharacterAdded:Wait()
+
+            if char then
+                local humanoid = char:FindFirstChildOfClass("Humanoid")
+
+                if humanoid and humanoid.RigType == Enum.HumanoidRigType.R15 then
+                    G:fetchAndExecute("https://pastefy.app/YZoglOyJ/raw") -- R15 script URL
+                else
+                    G:fetchAndExecute("https://pastefy.app/wa3v2Vgm/raw") -- Non-R15 script URL
+                end
+            end
+            end)    
+    end
 })
 
 Character:CreateSection("Universal")
@@ -240,6 +291,7 @@ end
 humanoid.PlatformStand = false
 end
 end
+
 local Input = Character:CreateInput({
 Name = "Fly Speed",
 Description = "Changes flight speed",
@@ -272,11 +324,23 @@ local WalkSpeedSlider = Character:CreateSlider({
     end
 }, "WalkSpeedSlider")
 
+local JumpPowerSlider = Character:CreateSlider({
+    Name = "JumpPower",
+    Range = {0, 200},
+    Increment = 1,
+    CurrentValue = 50,
+    Callback = function(Value)
+        if game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:FindFirstChild("Humanoid") then
+            game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value
+        end
+    end
+}, "JumpPowerSlider")
+
 local Button = Character:CreateButton({
     Name = "Reset to Default", -- Button name
     Description = "Resets WalkSpeed and JumpPower to default values and slider positions.", -- Button description
     Callback = function()
-        -- Reset the WalkSpeed and JumpPower of the player
+        local successMessage, errorMessage = pcall(function()
         local player = game.Players.LocalPlayer
         if player.Character then
             local humanoid = player.Character:FindFirstChild("Humanoid")
@@ -289,15 +353,27 @@ local Button = Character:CreateButton({
         -- Update the sliders back to their default values
         WalkSpeedSlider:UpdateValue(16) -- Reset WalkSpeed slider to default (16)
         JumpPowerSlider:UpdateValue(50) -- Reset JumpPower slider to default (50)
-        
-        -- Optionally, print a message to confirm reset
-        Luna:Notification({ 
-            Title = "WalkSpeed/Jumpspeed Reset",
+    end)
+    
+        if successMessage then
+            Luna:Notification({ 
+            Title = "Script Executed Succesfully",
             Icon = "notifications_active",
             ImageSource = "Material",
-            Content = "Luna Hub Notification"
+            Content = "Script is working."
+        })
+    else
+
+    if not successMessage then
+        Luna:Notification({ 
+            Title = "Error", 
+            Icon = "report",
+            ImageSource = "Material",
+            Content = "An error occurred: " .. errorMessage
         })
     end
+end
+end
 })
 
 local Label = Extras:CreateLabel({
@@ -308,16 +384,33 @@ local Label = Extras:CreateLabel({
 local Button = Extras:CreateButton({
     Name = "Anti Afk", -- Button name
     Description = "Enables Anti Afk.", -- Button description
-    Callback = function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/hassanxzayn-lua/Anti-afk/main/antiafkbyhassanxzyn"))();
-        Luna:Notification({ 
-            Title = "Anti Afk Executed",
-            Icon = "notifications_active",
-            ImageSource = "Material",
-            Content = "Luna Hub Notification"
-        })
+        Callback = function()
+            local successMessage, errorMessage = pcall(function()
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/liteeeeeeeee/Luna/refs/heads/main/antiAfk%20script.lua"))()
+            end)
+        
+            if successMessage then
+                Luna:Notification({ 
+                Title = "Script Executed Succesfully",
+                Icon = "notifications_active",
+                ImageSource = "Material",
+                Content = "Script is working."
+            })
+        else
+
+        if not successMessage then
+            Luna:Notification({ 
+                Title = "Error", 
+                Icon = "report",
+                ImageSource = "Material",
+                Content = "An error occurred: " .. errorMessage
+            })
+        end
     end
+end
 })
+
+Extras:CreateDivider()
 
 local Label = Extras:CreateLabel({
 	Text = "Warning",
@@ -332,6 +425,8 @@ local Button = Extras:CreateButton({
     end
 })
 
+Extras:CreateDivider()
+
 local Label = Extras:CreateLabel({
 	Text = "Testing",
 	Style = 2 -- Luna Labels Have 3 Styles : A Basic Label, A Green Information Label and A Red Warning Label. Look At The Following Image For More Details
@@ -340,29 +435,59 @@ local Label = Extras:CreateLabel({
 local Button = Extras:CreateButton({
     Name = "UNC Test", -- Button name
     Description = "Runs a UNC test.", -- Button description
-    Callback = function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/unified-naming-convention/NamingStandard/refs/heads/main/UNCCheckEnv.lua"))() 
-        Luna:Notification({ 
-            Title = "UNC Test Executed",
-            Icon = "notifications_active",
-            ImageSource = "Material",
-            Content = "Luna Hub Notification"
-        })
+        Callback = function()
+            local successMessage, errorMessage = pcall(function()
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/unified-naming-convention/NamingStandard/refs/heads/main/UNCCheckEnv.lua"))()
+            end)
+        
+            if successMessage then
+                Luna:Notification({ 
+                Title = "Script Executed Succesfully",
+                Icon = "notifications_active",
+                ImageSource = "Material",
+                Content = "Script is working."
+            })
+        else
+
+        if not successMessage then
+            Luna:Notification({ 
+                Title = "Error", 
+                Icon = "report",
+                ImageSource = "Material",
+                Content = "An error occurred: " .. errorMessage
+            })
+        end
     end
+end
 })
 
 local Button = Extras:CreateButton({
     Name = "sUNC Test", -- Button name
     Description = "Runs a sUNC test.", -- Button description
-    Callback = function()
-        loadstring(game:HttpGet("https://gitlab.com/sens3/nebunu/-/raw/main/HummingBird8's_sUNC_yes_i_moved_to_gitlab_because_my_github_acc_got_brickedd/sUNCm0m3n7.lua"))()
-        Luna:Notification({ 
-            Title = "sUNC Test Executed",
-            Icon = "notifications_active",
-            ImageSource = "Material",
-            Content = "Luna Hub Notification"
-        })
+        Callback = function()
+            local successMessage, errorMessage = pcall(function()
+                loadstring(game:HttpGet("https://gitlab.com/sens3/nebunu/-/raw/main/HummingBird8's_sUNC_yes_i_moved_to_gitlab_because_my_github_acc_got_brickedd/sUNCm0m3n7.lua"))()
+            end)
+        
+            if successMessage then
+                Luna:Notification({ 
+                Title = "Script Executed Succesfully",
+                Icon = "notifications_active",
+                ImageSource = "Material",
+                Content = "Script is working."
+            })
+        else
+
+        if not successMessage then
+            Luna:Notification({ 
+                Title = "Error", 
+                Icon = "report",
+                ImageSource = "Material",
+                Content = "An error occurred: " .. errorMessage
+            })
+        end
     end
+end
 })
 
 Credits:CreateSection("Luna UI Credits")
@@ -377,10 +502,11 @@ local Paragraph = Credits:CreateParagraph({
 	Text = "Tarmac and qweery - Icon Modules Kirill9655 - Loading Circle and Certain Images Sirius Discord Members - Feedback, Suggestions And Teste Inori - Configuration Concept"
 })
 
+Credits:CreateDivider()
+
 Credits:CreateSection("Nexus Hub Credits")
 
 local Paragraph = Credits:CreateParagraph({
 	Title = "Friends",
 	Text = "Pooke Pepless - giving me ideas and helping me out with the hub :3"
 })
-
