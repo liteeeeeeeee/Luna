@@ -77,6 +77,8 @@ local Paragraph = MainTab:CreateParagraph({
 	Text = "No idea what to put here yet"
 })
 
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 Universal:CreateSection("Popular among the community")
 
 local Button = Universal:CreateButton({
@@ -211,8 +213,50 @@ local Button = Universal:CreateButton({
     end
 })
 
+local Button = Universal:CreateButton({
+    Name = "Chat Bypasser",
+    Description = nil,
+        Callback = function()
+            local successMessage, errorMessage = pcall(function()
+            local G = loadstring(game:HttpGet("https://raw.githubusercontent.com/Bwhw827g29wh/Scripts/refs/heads/main/FetchAndExecute.lua"))()
+
+            local player = game.Players.LocalPlayer
+            local char = player.Character or player.CharacterAdded:Wait()
+
+            if char then
+                local humanoid = char:FindFirstChildOfClass("Humanoid")
+
+                if humanoid and humanoid.RigType == Enum.HumanoidRigType.R15 then
+                    G:fetchAndExecute("https://pastefy.app/2Zo3VgJm/raw") -- R15 script URL
+                else
+                    G:fetchAndExecute("https://pastefy.app/2Zo3VgJm/raw") -- Non-R15 script URL
+                end
+            end
+            end)
+            
+            if successMessage then
+                Luna:Notification({ 
+                Title = "Script Executed Succesfully",
+                Icon = "notifications_active",
+                ImageSource = "Material",
+                Content = "Script is working."
+            })
+            else
+
+            if not successMessage then
+                Luna:Notification({ 
+                    Title = "Error", 
+                    Icon = "report",
+                    ImageSource = "Material",
+                    Content = "An error occurred: " .. errorMessage
+                })
+            end     
+        end
+    end
+})
+
 Universal:CreateDivider()
-Universal:CreateSection("Evil's Scripts")
+Universal:CreateSection("Evilion's Scripts")
 
 local Label = Universal:CreateLabel({
 	Text = "Join the discord server for more info",
@@ -450,6 +494,204 @@ local Button = Universal:CreateButton({
         end
     end
 })
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Keyless:CreateSection("Fisch")
+
+local Button = Keyless:CreateButton({
+    Name = "Zenith hub",
+    Description = nil,
+        Callback = function()
+            local successMessage, errorMessage = pcall(function()
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/Efe0626/ZenithHub/refs/heads/main/Loader"))()
+            end)
+            
+            if successMessage then
+                Luna:Notification({ 
+                Title = "Script Executed Succesfully",
+                Icon = "notifications_active",
+                ImageSource = "Material",
+                Content = "Script is working."
+            })
+            else
+
+            if not successMessage then
+                Luna:Notification({ 
+                    Title = "Error", 
+                    Icon = "report",
+                    ImageSource = "Material",
+                    Content = "An error occurred: " .. errorMessage
+                })
+            end
+        end
+    end
+})
+
+local Button = Keyless:CreateButton({
+    Name = "Speed Hub X",
+    Description = nil,
+        Callback = function()
+            local successMessage, errorMessage = pcall(function()
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/AhmadV99/Speed-Hub-X/main/Speed%20Hub%20X.lua", true))()
+            end)
+            
+            if successMessage then
+                Luna:Notification({ 
+                Title = "Script Executed Succesfully",
+                Icon = "notifications_active",
+                ImageSource = "Material",
+                Content = "Script is working."
+            })
+            else
+
+            if not successMessage then
+                Luna:Notification({ 
+                    Title = "Error", 
+                    Icon = "report",
+                    ImageSource = "Material",
+                    Content = "An error occurred: " .. errorMessage
+                })
+            end
+        end
+    end
+})
+
+Keyless:CreateSection("Arsenal")
+
+local Button = Keyless:CreateButton({
+    Name = "Arsenal",
+    Description = nil,
+        Callback = function()
+            local successMessage, errorMessage = pcall(function()
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/Insertl/QuotasHub/main/BETAv1.3"))()
+            end)
+            
+            if successMessage then
+                Luna:Notification({ 
+                Title = "Script Executed Succesfully",
+                Icon = "notifications_active",
+                ImageSource = "Material",
+                Content = "Script is working."
+            })
+            else
+
+            if not successMessage then
+                Luna:Notification({ 
+                    Title = "Error", 
+                    Icon = "report",
+                    ImageSource = "Material",
+                    Content = "An error occurred: " .. errorMessage
+                })
+            end
+        end
+    end
+})
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+requireKey:CreateSection("Fisch")
+
+local Button = requireKey:CreateButton({
+    Name = "Zpu",
+    Description = nil,
+        Callback = function()
+            local successMessage, errorMessage = pcall(function()
+                loadstring(game:HttpGet('https://raw.githubusercontent.com/xZPUHigh/Spectrum-Cloud/main/Loader.lua'))()
+            end)
+            
+            if successMessage then
+                Luna:Notification({ 
+                Title = "Script Executed Succesfully",
+                Icon = "notifications_active",
+                ImageSource = "Material",
+                Content = "Script is working."
+            })
+            else
+
+            if not successMessage then
+                Luna:Notification({ 
+                    Title = "Error", 
+                    Icon = "report",
+                    ImageSource = "Material",
+                    Content = "An error occurred: " .. errorMessage
+                })
+            end
+        end
+    end
+})
+
+requireKey:CreateSection("Driving Empire")
+
+local Button = requireKey:CreateButton({
+    Name = "Driving Empire",
+    Description = nil,
+        Callback = function()
+            local successMessage, errorMessage = pcall(function()
+                loadstring(game:HttpGet('https://raw.githubusercontent.com/xZPUHigh/Spectrum-Cloud/main/Loader.lua'))()
+            end)
+            
+            if successMessage then
+                Luna:Notification({ 
+                Title = "Script Executed Succesfully",
+                Icon = "notifications_active",
+                ImageSource = "Material",
+                Content = "Script is working."
+            })
+            else
+
+            if not successMessage then
+                Luna:Notification({ 
+                    Title = "Error", 
+                    Icon = "report",
+                    ImageSource = "Material",
+                    Content = "An error occurred: " .. errorMessage
+                })
+            end
+        end
+    end
+})
+
+requireKey:CreateSection("Pets Go!")
+
+local Button = requireKey:CreateButton({
+    Name = "Pets Go!",
+    Description = nil,
+        Callback = function()
+            local successMessage, errorMessage = pcall(function()
+                loadstring(game:HttpGet('https://raw.githubusercontent.com/xZPUHigh/Spectrum-Cloud/main/Loader.lua'))()
+            end)
+            
+            if successMessage then
+                Luna:Notification({ 
+                Title = "Script Executed Succesfully",
+                Icon = "notifications_active",
+                ImageSource = "Material",
+                Content = "Script is working."
+            })
+            else
+
+            if not successMessage then
+                Luna:Notification({ 
+                    Title = "Error", 
+                    Icon = "report",
+                    ImageSource = "Material",
+                    Content = "An error occurred: " .. errorMessage
+                })
+            end
+        end
+    end
+})
+
+requireKey:CreateSection("")
+requireKey:CreateSection("")
+requireKey:CreateSection("")
+requireKey:CreateSection("")
+requireKey:CreateSection("")
+requireKey:CreateSection("")
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Character:CreateSection("Universal")
 
