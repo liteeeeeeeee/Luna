@@ -73,8 +73,8 @@ local Credits = Window:CreateTab({
 
 
 local Paragraph = MainTab:CreateParagraph({
-	Title = "Paragraph Example ",
-	Text = "This is an example of a paragraph. You can use this to display information about your script or hub."
+	Title = "Luna Hub Beta Released",
+	Text = "No idea what to put here yet"
 })
 
 Universal:CreateSection("Popular among the community")
@@ -161,7 +161,7 @@ local Button = Universal:CreateButton({
                     ImageSource = "Material",
                     Content = "Your executor does not support hookfunction."
                 })
-            end
+            end    
     end
 end
 })
@@ -188,7 +188,266 @@ local Button = Universal:CreateButton({
                     G:fetchAndExecute("https://pastefy.app/wa3v2Vgm/raw") -- Non-R15 script URL
                 end
             end
-            end)    
+            end)
+            
+            if successMessage then
+                Luna:Notification({ 
+                Title = "Script Executed Succesfully",
+                Icon = "notifications_active",
+                ImageSource = "Material",
+                Content = "Script is working."
+            })
+            else
+
+            if not successMessage then
+                Luna:Notification({ 
+                    Title = "Error", 
+                    Icon = "report",
+                    ImageSource = "Material",
+                    Content = "An error occurred: " .. errorMessage
+                })
+            end     
+        end
+    end
+})
+
+Universal:CreateDivider()
+Universal:CreateSection("Evil's Scripts")
+
+local Label = Universal:CreateLabel({
+	Text = "Join the discord server for more info",
+	Style = 2
+})
+
+local Button = Universal:CreateButton({
+    Name = "Pizza place face changer",
+    Description = "Let's you change ur face decal serversided and people can see it.",
+    	Callback = function()
+            local successMessage, errorMessage = pcall(function()
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/evilionx3/workatapizzaplace/refs/heads/main/facechanger.luau"))()
+            end)
+            
+            if successMessage then
+                Luna:Notification({ 
+                Title = "Script Executed Succesfully",
+                Icon = "notifications_active",
+                ImageSource = "Material",
+                Content = "Script is working."
+            })
+            else
+
+            if not successMessage then
+                Luna:Notification({ 
+                    Title = "Error", 
+                    Icon = "report",
+                    ImageSource = "Material",
+                    Content = "An error occurred: " .. errorMessage
+                })
+            end
+        end
+    end
+})
+
+local Button = Universal:CreateButton({
+    Name = "Kawaii magnet",
+    Description = nil,
+        Callback = function()
+            local successMessage, errorMessage = pcall(function()
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/evilionx3/kawaii-magnet-part-claim-edition/refs/heads/main/kawaiimagnet"))()
+            end)
+            
+            if successMessage then
+                Luna:Notification({ 
+                Title = "Script Executed Succesfully",
+                Icon = "notifications_active",
+                ImageSource = "Material",
+                Content = "Script is working."
+            })
+            else
+
+            if not successMessage then
+                Luna:Notification({ 
+                    Title = "Error", 
+                    Icon = "report",
+                    ImageSource = "Material",
+                    Content = "An error occurred: " .. errorMessage
+                })
+            end
+        end
+    end
+})
+
+local Button = Universal:CreateButton({
+    Name = "Gear wall fucker",
+    Description = nil,
+        Callback = function()
+            local successMessage, errorMessage = pcall(function()
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/evilionx3/gear-wall-gui/refs/heads/main/loader.lua"))()
+            end)
+            
+            if successMessage then
+                Luna:Notification({ 
+                Title = "Script Executed Succesfully",
+                Icon = "notifications_active",
+                ImageSource = "Material",
+                Content = "Script is working."
+            })
+            else
+
+            if not successMessage then
+                Luna:Notification({ 
+                    Title = "Error", 
+                    Icon = "report",
+                    ImageSource = "Material",
+                    Content = "An error occurred: " .. errorMessage
+                })
+            end
+        end
+    end
+})
+
+local Button = Universal:CreateButton({
+    Name = "Apple to pears gui",
+    Description = nil,
+        Callback = function()
+            local successMessage, errorMessage = pcall(function()
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/n0raxd/apples-to-paris/refs/heads/main/crazy.lua",true))()
+            end)
+            
+            if successMessage then
+                Luna:Notification({ 
+                Title = "Script Executed Succesfully",
+                Icon = "notifications_active",
+                ImageSource = "Material",
+                Content = "Script is working."
+            })
+            else
+
+            if not successMessage then
+                Luna:Notification({ 
+                    Title = "Error", 
+                    Icon = "report",
+                    ImageSource = "Material",
+                    Content = "An error occurred: " .. errorMessage
+                })
+            end
+        end
+    end
+})
+
+local Button = Universal:CreateButton({
+    Name = "Fe-knife",
+    Description = "Allows stabbing in R6, flinging targets on collision",
+        Callback = function()
+            local successMessage, errorMessage = pcall(function()
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/evilionx3/fe-knife/refs/heads/main/knife.luau", true))()
+            end)
+            
+            if successMessage then
+                Luna:Notification({ 
+                Title = "Script Executed Succesfully",
+                Icon = "notifications_active",
+                ImageSource = "Material",
+                Content = "Script is working."
+            })
+            else
+
+            if not successMessage then
+                Luna:Notification({ 
+                    Title = "Error", 
+                    Icon = "report",
+                    ImageSource = "Material",
+                    Content = "An error occurred: " .. errorMessage
+                })
+            end
+        end
+    end
+})
+
+local Button = Universal:CreateButton({
+    Name = "Blackhole tool",
+    Description = "Equip the tool in a game with unanchored parts and click, unequipping stops bringing the parts",
+        Callback = function()
+            local successMessage, errorMessage = pcall(function()
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/evilionx3/blackholetool/refs/heads/main/skibidi.lua"))() 
+            end)
+            
+            if successMessage then
+                Luna:Notification({ 
+                Title = "Script Executed Succesfully",
+                Icon = "notifications_active",
+                ImageSource = "Material",
+                Content = "Script is working."
+            })
+            else
+
+            if not successMessage then
+                Luna:Notification({ 
+                    Title = "Error", 
+                    Icon = "report",
+                    ImageSource = "Material",
+                    Content = "An error occurred: " .. errorMessage
+                })
+            end
+        end
+    end
+})
+
+local Button = Universal:CreateButton({
+    Name = "Drag unanchored parts",
+    Description = "This lets you drag any unanchored part, supports mobile AND desktop",
+        Callback = function()
+            local successMessage, errorMessage = pcall(function()
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/evilionx3/fe-drag-unanchored-parts/refs/heads/main/dragparts.lua"))()
+            end)
+            
+            if successMessage then
+                Luna:Notification({ 
+                Title = "Script Executed Succesfully",
+                Icon = "notifications_active",
+                ImageSource = "Material",
+                Content = "Script is working."
+            })
+            else
+
+            if not successMessage then
+                Luna:Notification({ 
+                    Title = "Error", 
+                    Icon = "report",
+                    ImageSource = "Material",
+                    Content = "An error occurred: " .. errorMessage
+                })
+            end
+        end
+    end
+})
+
+local Button = Universal:CreateButton({
+    Name = "Npc control",
+    Description = "R6 and PC only, allows you to control npcs",
+        Callback = function()
+            local successMessage, errorMessage = pcall(function()
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/evilionx3/btools/refs/heads/main/btools.lua"))()
+            end)
+            
+            if successMessage then
+                Luna:Notification({ 
+                Title = "Script Executed Succesfully",
+                Icon = "notifications_active",
+                ImageSource = "Material",
+                Content = "Script is working."
+            })
+            else
+
+            if not successMessage then
+                Luna:Notification({ 
+                    Title = "Error", 
+                    Icon = "report",
+                    ImageSource = "Material",
+                    Content = "An error occurred: " .. errorMessage
+                })
+            end
+        end
     end
 })
 
@@ -508,5 +767,5 @@ Credits:CreateSection("Nexus Hub Credits")
 
 local Paragraph = Credits:CreateParagraph({
 	Title = "Friends",
-	Text = "Pooke Pepless - giving me ideas and helping me out with the hub :3"
+	Text = "Pooke Pepless - Giving me ideas and helping me out with the hub :3                                                  Evil - Helping me out with some functions of scripts :3"
 })
