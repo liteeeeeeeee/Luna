@@ -168,6 +168,35 @@ local Button = Universal:CreateButton({
 end
 })
 
+local Button = Universal:CreateButton({
+    Name = "Remote spy", -- Button name
+    Description = "This works on luna", -- Button description
+        Callback = function()
+            local successMessage, errorMessage = pcall(function()
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/nuIIism/scripts/main/rspy.lua"))()
+            end)
+        
+            if successMessage then
+                Luna:Notification({ 
+                Title = "Script Executed Succesfully",
+                Icon = "notifications_active",
+                ImageSource = "Material",
+                Content = "Script is working."
+            })
+        else
+
+        if not successMessage then
+            Luna:Notification({ 
+                Title = "Error", 
+                Icon = "report",
+                ImageSource = "Material",
+                Content = "An error occurred: " .. errorMessage
+            })
+        end
+    end
+end
+})
+
 Universal:CreateDivider()
 Universal:CreateSection("Others")
 
@@ -588,6 +617,36 @@ local Button = Keyless:CreateButton({
     end
 })
 
+Keyless:CreateSection("Lumber tycoon 2")
+
+local Button = Keyless:CreateButton({
+    Name = "Kron Hub",
+    Description = nil,
+        Callback = function()
+            local successMessage, errorMessage = pcall(function()
+                loadstring(game:HttpGet('https://raw.githubusercontent.com/DevKron/Kron_Hub/refs/heads/main/version_1.0'))("")
+            end)
+            
+            if successMessage then
+                Luna:Notification({ 
+                Title = "Script Executed Succesfully",
+                Icon = "notifications_active",
+                ImageSource = "Material",
+                Content = "Script is working."
+            })
+            else
+
+            if not successMessage then
+                Luna:Notification({ 
+                    Title = "Error", 
+                    Icon = "report",
+                    ImageSource = "Material",
+                    Content = "An error occurred: " .. errorMessage
+                })
+            end
+        end
+    end
+})
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
