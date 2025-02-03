@@ -583,7 +583,7 @@ local Button = Keyless:CreateButton({
 Keyless:CreateSection("Pets Go!")
 
 local Button = Keyless:CreateButton({
-    Name = "Pets Go!",
+    Name = "ZPU",
     Description = nil,
         Callback = function()
             local successMessage, errorMessage = pcall(function()
@@ -614,7 +614,7 @@ local Button = Keyless:CreateButton({
 Keyless:CreateSection("Driving Empire")
 
 local Button = Keyless:CreateButton({
-    Name = "Driving Empire",
+    Name = "ZPU",
     Description = nil,
         Callback = function()
             local successMessage, errorMessage = pcall(function()
@@ -647,7 +647,7 @@ local Button = Keyless:CreateButton({
 requireKey:CreateSection("Fisch")
 
 local Button = requireKey:CreateButton({
-    Name = "Zpu",
+    Name = "ZPU",
     Description = nil,
         Callback = function()
             local successMessage, errorMessage = pcall(function()
