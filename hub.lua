@@ -580,6 +580,68 @@ local Button = Keyless:CreateButton({
     end
 })
 
+Keyless:CreateSection("Pets Go!")
+
+local Button = Keyless:CreateButton({
+    Name = "Pets Go!",
+    Description = nil,
+        Callback = function()
+            local successMessage, errorMessage = pcall(function()
+                loadstring(game:HttpGet('https://raw.githubusercontent.com/xZPUHigh/Spectrum-Cloud/main/Loader.lua'))()
+            end)
+            
+            if successMessage then
+                Luna:Notification({ 
+                Title = "Script Executed Succesfully",
+                Icon = "notifications_active",
+                ImageSource = "Material",
+                Content = "Script is working."
+            })
+            else
+
+            if not successMessage then
+                Luna:Notification({ 
+                    Title = "Error", 
+                    Icon = "report",
+                    ImageSource = "Material",
+                    Content = "An error occurred: " .. errorMessage
+                })
+            end
+        end
+    end
+})
+
+Keyless:CreateSection("Driving Empire")
+
+local Button = Keyless:CreateButton({
+    Name = "Driving Empire",
+    Description = nil,
+        Callback = function()
+            local successMessage, errorMessage = pcall(function()
+                loadstring(game:HttpGet('https://raw.githubusercontent.com/xZPUHigh/Spectrum-Cloud/main/Loader.lua'))()
+            end)
+            
+            if successMessage then
+                Luna:Notification({ 
+                Title = "Script Executed Succesfully",
+                Icon = "notifications_active",
+                ImageSource = "Material",
+                Content = "Script is working."
+            })
+            else
+
+            if not successMessage then
+                Luna:Notification({ 
+                    Title = "Error", 
+                    Icon = "report",
+                    ImageSource = "Material",
+                    Content = "An error occurred: " .. errorMessage
+                })
+            end
+        end
+    end
+})
+
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 requireKey:CreateSection("Fisch")
@@ -613,67 +675,7 @@ local Button = requireKey:CreateButton({
     end
 })
 
-requireKey:CreateSection("Driving Empire")
 
-local Button = requireKey:CreateButton({
-    Name = "Driving Empire",
-    Description = nil,
-        Callback = function()
-            local successMessage, errorMessage = pcall(function()
-                loadstring(game:HttpGet('https://raw.githubusercontent.com/xZPUHigh/Spectrum-Cloud/main/Loader.lua'))()
-            end)
-            
-            if successMessage then
-                Luna:Notification({ 
-                Title = "Script Executed Succesfully",
-                Icon = "notifications_active",
-                ImageSource = "Material",
-                Content = "Script is working."
-            })
-            else
-
-            if not successMessage then
-                Luna:Notification({ 
-                    Title = "Error", 
-                    Icon = "report",
-                    ImageSource = "Material",
-                    Content = "An error occurred: " .. errorMessage
-                })
-            end
-        end
-    end
-})
-
-requireKey:CreateSection("Pets Go!")
-
-local Button = requireKey:CreateButton({
-    Name = "Pets Go!",
-    Description = nil,
-        Callback = function()
-            local successMessage, errorMessage = pcall(function()
-                loadstring(game:HttpGet('https://raw.githubusercontent.com/xZPUHigh/Spectrum-Cloud/main/Loader.lua'))()
-            end)
-            
-            if successMessage then
-                Luna:Notification({ 
-                Title = "Script Executed Succesfully",
-                Icon = "notifications_active",
-                ImageSource = "Material",
-                Content = "Script is working."
-            })
-            else
-
-            if not successMessage then
-                Luna:Notification({ 
-                    Title = "Error", 
-                    Icon = "report",
-                    ImageSource = "Material",
-                    Content = "An error occurred: " .. errorMessage
-                })
-            end
-        end
-    end
-})
 
 requireKey:CreateSection("")
 requireKey:CreateSection("")
