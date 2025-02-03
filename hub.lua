@@ -71,10 +71,11 @@ local Credits = Window:CreateTab({
 	ShowTitle = true -- This will determine whether the big header text in the tab will show
 })
 
+MainTab:CreateSection("Changelogs")
 
 local Paragraph = MainTab:CreateParagraph({
-	Title = "Luna Hub Beta Released",
-	Text = "No idea what to put here yet"
+	Title = "Updates",
+	Text = "Fixed issue with replacements script wrong section"
 })
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
